@@ -3,6 +3,7 @@ import Home from './Home';
 import Roots from "./Roots";
 import About from './About';
 import ErrorPage from './ErrorPage';
+import Shop from './Shop';
 
 const router = createBrowserRouter([
 
@@ -10,6 +11,7 @@ const router = createBrowserRouter([
         path : '/',
         element : <Roots></Roots>,
         errorElement : <ErrorPage></ErrorPage>,
+        loader : () => fetch("products.json"),
         children : [
 
     { 
@@ -23,11 +25,19 @@ const router = createBrowserRouter([
         path : '/home',
         element : <Home></Home>
                 
-    },   
+    }, 
+
     { 
 
         path : '/about',
         element : <About></About>
+                
+    }, 
+
+    { 
+
+        path : '/shop',
+        element : <Shop></Shop>
                 
     }, 
        

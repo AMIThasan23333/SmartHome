@@ -1,17 +1,20 @@
 import React, { createContext } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 
 
-  const ProuctContext = createContext([])
+ export  const ProuctContext = createContext([])
 
 
 const Roots = () => {
 
 
+    const products = useLoaderData()
+    console.log(products)
+
     return (
-        <ProuctContext.Provider  value={[]}>
+        <ProuctContext.Provider  value={products}>
 
             <Header></Header>
             <Outlet></Outlet>
