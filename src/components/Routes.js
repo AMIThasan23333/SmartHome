@@ -4,6 +4,7 @@ import Roots from "./Roots";
 import About from './About';
 import ErrorPage from './ErrorPage';
 import Shop from './Shop';
+import Cart from './Cart';
 
 const router = createBrowserRouter([
 
@@ -38,6 +39,14 @@ const router = createBrowserRouter([
 
         path : '/shop',
         element : <Shop></Shop>
+                
+    }, 
+
+    
+    { 
+
+        path : '/cart',
+        element : <Cart></Cart>
                 
     }, 
        

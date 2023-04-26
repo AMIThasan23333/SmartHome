@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ProuctContext } from './Roots'
 import Product from './Product';
 
@@ -8,9 +8,14 @@ const Shop = () => {
   const products = useContext(ProuctContext);
   console.log(products)
 
-  const handleAddToCart = () => {
+  const [cart, setCart ]  = useState([])
 
-    console.log("first")
+console.log(cart)
+
+  const handleAddToCart = (product) => {
+
+   setCart(previous => [...previous,product]);
+
 
   }
 
