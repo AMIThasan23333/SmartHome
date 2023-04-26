@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { ProuctContext } from './Roots'
 import Product from './Product';
+import { addToDb } from '../utils/fakeDB';
+import { toast } from 'react-toastify';
 
 const Shop = () => {
 
@@ -26,7 +28,19 @@ console.log(cart)
       newCart = [...cart, product];
 
 
+    }else{
+
+      const rest  = cart.filter(existingProduct => existingProduct.id !== product.id);
+
+      exists.quantity =  exists.quantity  + 1;
+
+      newCart =[...rest, exists];
+
     }
+  
+     setCart(newCart);
+     addToDb(product.id)
+     toast.success('Product added', {autoClose : 500})
 
   }
 
