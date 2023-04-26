@@ -14,8 +14,19 @@ console.log(cart)
 
   const handleAddToCart = (product) => {
 
-   setCart(previous => [...previous,product]);
+    let newCart = [];
 
+    const exists = cart.find(existingProduct => existingProduct.id === product.id)
+
+
+
+    if(!exists){
+
+      product.quantity = 1;
+      newCart = [...cart, product];
+
+
+    }
 
   }
 
