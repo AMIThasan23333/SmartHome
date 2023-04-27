@@ -5,6 +5,7 @@ import About from './About';
 import ErrorPage from './ErrorPage';
 import Shop from './Shop';
 import Cart from './Cart';
+import { myFunc, productCart } from "./CartProduct";
 
 const router = createBrowserRouter([
 
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
         path : '/',
         element : <Roots></Roots>,
         errorElement : <ErrorPage></ErrorPage>,
-        loader : () => fetch("products.json"),
+        loader : productCart,
         children : [
 
     { 

@@ -20,7 +20,6 @@ const Roots = () => {
 
     return (
         <ProuctContext.Provider  value={products}>
-
                  <CartContext.Provider  value={[cart , setCart]}>
 
                     <Header></Header>
