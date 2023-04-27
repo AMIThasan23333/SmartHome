@@ -23,13 +23,13 @@ import { getStoredCart } from "../utils/fakeDB";
             foundProduct.quantity = quantity
 
             initialCart.push(foundProduct);
-            
+
         }
     }
 
 
 
 
-    return products;
+    return {products,initialCart};
 
   }

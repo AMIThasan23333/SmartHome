@@ -13,10 +13,10 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 const Roots = () => {
 
 
-    const products = useLoaderData()
-    console.log(products)
+    const{products, initialCart} = useLoaderData()
+    const [cart , setCart] = useState(initialCart)
 
-    const [cart , setCart] = useState([])
+    
 
     return (
         <ProuctContext.Provider  value={products}>
