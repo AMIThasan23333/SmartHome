@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from './Roots'
 import CartItem from './CartItem'
-import { removeFromDb } from '../utils/fakeDB'
+import { deleteShoppingCart, removeFromDb } from '../utils/fakeDB'
 import { toast } from 'react-toastify'
 
 const Cart = () => {
@@ -28,8 +28,23 @@ const Cart = () => {
 
   }
 
+     const orderHandler = () => {
 
-  console.log(cart)
+
+      if(cart.length) {
+
+        setCart([])
+
+        deleteShoppingCart()
+        toast.success('Order Placed', {autoClose : 500});
+
+      }
+
+
+     }
+
+
+
 
   return (
     <div className='flex min-h-screen items-start justify-center bg-gray-100 text-gray-900'>
@@ -69,6 +84,7 @@ const Cart = () => {
             </button>
           </Link>
           <button
+          onClick={ orderHandler}
             type='button'
             className='px-6 py-2 border font-semibold rounded-full hover:bg-cyan-400 bg-cyan-200 text-gray-800'
           >
